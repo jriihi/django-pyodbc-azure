@@ -442,4 +442,6 @@ class DatabaseOperations(BaseDatabaseOperations):
         # Force floats to the correct type
         elif field and field.get_internal_type() == 'FloatField':
             value = float(value)
+        elif field and field.get_internal_type() == 'BooleanField':
+            value = bool(value)
         return value
